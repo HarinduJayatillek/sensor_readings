@@ -1,7 +1,7 @@
 // ignore_for_file: implementation_imports, sized_box_for_whitespace, avoid_print, prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 import 'package:flutter_echarts/flutter_echarts.dart';
+import './scan.dart';
 
 class Chart extends StatefulWidget {
   const Chart({super.key});
@@ -65,6 +65,10 @@ class _ChartState extends State<Chart> {
         children: [
           ElevatedButton(onPressed: onPressedStart, child: Text("Start")),
           ElevatedButton(onPressed: onPressedStop, child: Text("Stop")),
+          ElevatedButton(
+              onPressed: () => Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => ScanDevice())),
+              child: Text("Scan Devices")),
         ],
       ),
     );
